@@ -1,0 +1,20 @@
+package com.exemple;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+
+@RestController
+public class AgeCheckerController {
+
+	@PostMapping("/agechecker")
+	public String ageChecker(@RequestBody User user) {
+		if(user.getAge() < 18) {
+			return "You cant enter because you are under age.";
+		} else {
+			return "You can pass";
+		}
+	}
+	
+}

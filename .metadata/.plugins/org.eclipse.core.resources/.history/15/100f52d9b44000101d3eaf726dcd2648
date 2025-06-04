@@ -1,0 +1,27 @@
+package com.exemple;
+
+import java.util.Map;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+
+@RestController
+public class AgeCheckerController {
+
+	@PostMapping("/agechecker")
+	public String ageChecker(@RequestBody User user) {
+		String message;
+		
+		if(user.getAge() < 18) {
+			message = user.getName() + ", you can't enter because you are under age.";
+		} else {
+			message = user.getName() + ", you can pass";
+		}
+		
+		Map<String, String> response = new hashMap<>();
+		response.put("message", message);
+	}
+	
+}

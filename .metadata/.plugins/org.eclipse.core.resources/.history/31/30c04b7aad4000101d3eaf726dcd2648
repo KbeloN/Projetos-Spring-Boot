@@ -1,0 +1,16 @@
+package com.exemple;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.sun.net.httpserver.Request;
+
+@RestController
+public class GreetingController {
+
+	@GetMapping("/greet")
+	public String greet(@RequestBody UserProfile user) {
+		return "Greetings " + user.getName() + "!";
+	}
+}

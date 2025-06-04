@@ -1,0 +1,15 @@
+package com.exemple;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class ConverterController {
+
+	@GetMapping("/convert")
+	public String convertCelsiusToFahrenheit(@RequestParam Double celsius) {
+		Double fahrenheit = (c * 9 / 5) + 32; 
+		return c + "celsius is equal to " + fahrenheit + "fahrenheit";
+	}
+}

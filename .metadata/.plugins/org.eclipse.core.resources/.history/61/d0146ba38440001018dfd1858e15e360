@@ -1,0 +1,13 @@
+package helloController;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController 
+public class HelloController {
+	
+	@GetPost("/hello")
+	public void hello() {
+		System.out.println("Hello World!");
+	}
+	
+}
